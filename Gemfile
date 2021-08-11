@@ -40,4 +40,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "solargraph", "~> 0.43.0"
+gem 'solargraph', '~> 0.43.0'
+
+gem 'rubocop', '~> 1.18'
