@@ -43,3 +43,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'solargraph', '~> 0.43.0'
 
 gem 'rubocop', '~> 1.18'
+
+gem 'rubocop-performance', '~> 1.11'
