@@ -45,3 +45,5 @@ gem 'solargraph', '~> 0.43.0'
 gem 'rubocop', '~> 1.18'
 
 gem 'rubocop-performance', '~> 1.11'
+
+gem 'rubocop-rails', '~> 2.11'
