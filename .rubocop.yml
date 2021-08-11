@@ -22,6 +22,8 @@ AllCops:
     - 'public/**/*'
     - 'vendor/**/*'
     - 'db/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
   NewCops: enable
 
 Style/SymbolArray:
