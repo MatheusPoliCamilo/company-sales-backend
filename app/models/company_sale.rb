@@ -1,0 +1,2 @@
+class CompanySale < ApplicationRecord
+end
