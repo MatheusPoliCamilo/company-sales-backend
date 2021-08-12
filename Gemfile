@@ -33,6 +33,7 @@ group :development, :test do
   gem 'rubocop-performance', '~> 1.11'
   gem 'rubocop-rails', '~> 2.11'
   gem 'rubocop-rspec', '~> 2.4'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'solargraph', '~> 0.43.0'
 end
 
