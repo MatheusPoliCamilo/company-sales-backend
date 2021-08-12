@@ -1,24 +1,40 @@
-# README
+# Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Follow this settings to setup your project locally and run it.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+To run the project locally, you will need the following dependencies installed:
 
-* System dependencies
+    ruby 2.7.2
+    gem bundler
+    postgresql
 
-* Configuration
+## Installation
 
-* Database creation
+1. After clonning the repository, inside it, run the command bellow to install the dependencies.
 
-* Database initialization
+        bundle install
 
-* How to run the test suite
+2. Prepare database using the commands bellow.
 
-* Services (job queues, cache servers, search engines, etc.)
+        bin/rails db:create
+        bin/rails db:migrate
 
-* Deployment instructions
+3. If you want to seed the database, run the command bellow.
 
-* ...
+        rake db:seed
+  
+## Running the project
+
+To run the project locally, use the commands bellow.
+
+1. Starts the ProstgreSQL service.
+
+        sudo service postgresql start
+
+2. Runs the Rails server.
+
+        bin/rails server
+
+The Rails server will run by default on port 3000 of the localhost.
