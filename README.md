@@ -4,7 +4,7 @@ Follow this settings to setup your project locally and run it.
 
 ## Prerequisites
 
-To run the project locally, you will need the following dependencies installed:
+To run the project, you will need the following dependencies installed:
 
     ruby 2.7.2
     gem bundler
@@ -16,7 +16,7 @@ To run the project locally, you will need the following dependencies installed:
 
         bundle install
 
-2. Prepare database using the commands bellow.
+2. Create and prepare the database.
 
         bin/rails db:create
         bin/rails db:migrate
