@@ -1,6 +1,6 @@
 # Getting Started
 
-Follow this settings to setup your project locally and run it.
+This is project is the Rails back-end API for the Company Sales code challenge. Follow this settings to setup the project locally and run it.
 
 ## Prerequisites
 
