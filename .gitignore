@@ -26,4 +26,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore de VSCode directory
 .vscode
+
+# Ignore the SimpleCov coverage directory
+/coverage
