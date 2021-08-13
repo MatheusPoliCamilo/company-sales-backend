@@ -45,7 +45,6 @@ class MerchantsController < ApplicationController
     @merchant = Merchant.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def merchant_params
     params.require(:merchant).permit(:name, :address)
   end

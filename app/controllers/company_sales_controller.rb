@@ -45,7 +45,6 @@ class CompanySalesController < ApplicationController
     @company_sale = CompanySale.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def company_sale_params
     params.require(:company_sale).permit(:imported_at, :total_gross_income)
   end
