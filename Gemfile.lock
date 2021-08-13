@@ -81,6 +81,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    kwalify (0.7.2)
     listen (3.6.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -138,6 +139,10 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    reek (6.0.6)
+      kwalify (~> 0.7.0)
+      parser (~> 3.0.0)
+      rainbow (>= 2.0, < 4.0)
     regexp_parser (2.1.1)
     reverse_markdown (2.0.0)
       nokogiri
@@ -238,6 +243,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.4)
+  reek (~> 6.0)
   rspec-rails (~> 5.0)
   rubocop (~> 1.18)
   rubocop-performance (~> 1.11)
