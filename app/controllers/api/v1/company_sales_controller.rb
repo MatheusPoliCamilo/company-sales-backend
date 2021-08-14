@@ -1,12 +1,12 @@
 class API::V1::CompanySalesController < ApplicationController
   # GET /api/v1/company_sales
   def index
-    render json: CompanySale.all
+    render json: CompanySale.all, each_serializer: CompanySalesSerializer
   end
 
   # GET /api/v1/company_sales/1
   def show
-    render json: CompanySale.find(params[:id])
+    render json: CompanySale.find(params[:id]), serializer: CompanySalesSerializer
   end
 
   # POST /api/v1/company_sales
@@ -14,16 +14,7 @@ class API::V1::CompanySalesController < ApplicationController
     company_sale = CompanySale.new(company_sale_params)
 
     if company_sale.save
-      render json: company_sale, status: :created
-    else
-      render json: company_sale.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /api/v1/company_sales/1
-  def update
-    if company_sale.update(company_sale_params)
-      render json: company_sale
+      render json: company_sale, status: :created, serializer: CompanySalesSerializer
     else
       render json: company_sale.errors, status: :unprocessable_entity
     end
@@ -37,6 +28,6 @@ class API::V1::CompanySalesController < ApplicationController
   private
 
   def company_sale_params
-    params.require(:company_sale).permit(:imported_at, :total_gross_income)
+    params.permit(:imported_at)
   end
 end

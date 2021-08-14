@@ -8,8 +8,4 @@ RSpec.describe CompanySale, type: :model do
   describe '.imported_at' do
     it { is_expected.to validate_presence_of :imported_at }
   end
-
-  describe '.total_gross_income' do
-    it { is_expected.to validate_presence_of :total_gross_income }
-  end
 end

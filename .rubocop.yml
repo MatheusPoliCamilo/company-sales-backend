@@ -48,3 +48,6 @@ Style/ClassAndModuleChildren:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false

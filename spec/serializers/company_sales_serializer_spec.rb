@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CompanySalesSerializer do
-  subject { described_class.new company_sale }
-
   let(:company_sale) { build_stubbed :company_sale }
 
   it 'returns a json' do
@@ -13,6 +11,7 @@ RSpec.describe CompanySalesSerializer do
       sales: []
     }.to_json
 
+    subject = described_class.new(company_sale)
     expect(subject.to_json).to eql expected
   end
 end
