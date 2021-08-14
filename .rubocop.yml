@@ -12,6 +12,7 @@
 require:
   - rubocop-performance
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.7.2
@@ -43,4 +44,7 @@ Style/Documentation:
   Enabled: false # default: true
 
 Style/ClassAndModuleChildren:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false

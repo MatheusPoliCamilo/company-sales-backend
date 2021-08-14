@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe CompanySalesSerializer do
-  let(:company_sale) { build_stubbed :company_sale }
-
   subject { described_class.new company_sale }
+
+  let(:company_sale) { build_stubbed :company_sale }
 
   it 'returns a json' do
     expected = {
