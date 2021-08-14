@@ -12,7 +12,7 @@ To run the project, you will need the following dependencies installed:
 
 ## Installation
 
-1. After clonning the repository, inside it, run the command bellow to install the dependencies.
+1. After clonning the repository, inside it, run the command to install the dependencies.
 
         bundle install
 
