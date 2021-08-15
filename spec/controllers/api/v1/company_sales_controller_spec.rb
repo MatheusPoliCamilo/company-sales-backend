@@ -32,7 +32,7 @@ RSpec.describe API::V1::CompanySalesController, type: :controller do
       expect(response).to be_successful
     end
 
-    it 'returns the specified company sale' do
+    it 'returns the specified company sale as JSON' do
       company_sale = create(:company_sale)
       get :show, params: { id: company_sale.id }, as: :json
 
@@ -43,13 +43,16 @@ RSpec.describe API::V1::CompanySalesController, type: :controller do
   describe 'POST #create' do
     context 'with valid parameters' do
       it 'creates a new company_sale' do
+        company_sale = build(:company_sale)
+
         expect do
-          post :create, params: { imported_at: '2021-08-13T01:48:00.000Z' }, as: :json
+          post :create, params: company_sale.attributes, as: :json
         end.to change(CompanySale, :count).by(1)
       end
 
       it 'returns a JSON response with the new company_sale' do
-        post :create, params: { imported_at: '2021-08-13T01:48:00.000Z' }, as: :json
+        company_sale = build(:company_sale)
+        post :create, params: company_sale.attributes, as: :json
 
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including('application/json'))
