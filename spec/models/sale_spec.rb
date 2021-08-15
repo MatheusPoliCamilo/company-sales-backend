@@ -5,6 +5,10 @@ RSpec.describe Sale, type: :model do
     it { is_expected.to belong_to(:company_sale).required }
   end
 
+  describe '.merchant' do
+    it { is_expected.to have_one(:merchant).dependent(:restrict_with_error).required }
+  end
+
   describe '.purchaser_name' do
     it { is_expected.to validate_presence_of :purchaser_name }
   end

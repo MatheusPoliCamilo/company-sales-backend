@@ -1,5 +1,6 @@
 class Sale < ApplicationRecord
   belongs_to :company_sale
+  has_one :merchant, dependent: :restrict_with_error, required: true
 
   validates :purchaser_name, presence: true
   validates :item_description, presence: true
