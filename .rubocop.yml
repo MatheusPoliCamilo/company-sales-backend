@@ -51,3 +51,6 @@ RSpec/MultipleExpectations:
 
 RSpec/ExampleLength:
   Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
