@@ -6,5 +6,6 @@ FactoryBot.define do
     purchase_count { 2 }
 
     company_sale
+    merchant { association :merchant, sale: instance }
   end
 end
