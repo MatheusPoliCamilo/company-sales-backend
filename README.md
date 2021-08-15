@@ -8,7 +8,7 @@
 ![reek](https://ruby.ci/badges/70c1189f-60c9-44d2-853d-dab3a0cb9663/reek)
 ![ruby_critic](https://ruby.ci/badges/70c1189f-60c9-44d2-853d-dab3a0cb9663/ruby_critic)
 
-This project is the Rails back-end API for the Company Sales code challenge. Follow this settings to setup the project locally and run it.
+This project is the Rails back-end API for the SalesBox project. Follow this settings to setup the project locally and run it.
 
 ## Prerequisites
 
