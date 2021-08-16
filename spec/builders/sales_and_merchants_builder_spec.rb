@@ -58,8 +58,23 @@ RSpec.describe SalesAndMerchantsBuilder do
     end
 
     describe '.merchant' do
-      xit 'does not create a merchant if he already exists' do
-        create(:merchant, name: '')
+      it 'returns the merchant with the given name if it already exists' do
+        merchant = create(:merchant, name: "Bob's Pizza", address: 'Address of an already created merchant')
+
+        sales_to_build = [
+          {
+            'purchaser name': 'João Silva',
+            'item description': 'R$10 off R$20 of food',
+            'item price': '10.0',
+            'purchase count': '2',
+            'merchant address': '987 Fake St',
+            'merchant name': "Bob's Pizza"
+          }.with_indifferent_access
+        ]
+
+        sales = described_class.build(sales_to_build)
+
+        expect(sales.first.merchant.id).to eql merchant.id
       end
 
       it '.address returns the purchase merchant address' do

@@ -3,6 +3,6 @@ FactoryBot.define do
     address { '987 Fake St' }
     name { "Bob's Pizza" }
 
-    sale
+    sale { association :sale, merchant: instance }
   end
 end

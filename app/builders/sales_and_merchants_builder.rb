@@ -18,8 +18,13 @@ class SalesAndMerchantsBuilder < ApplicationBuilder
   private
 
   def build_merchant(merchant_to_build)
+    merchant_name = merchant_to_build['merchant name']
+    existent_merchant = Merchant.find_by(name: merchant_name)
+
+    return existent_merchant if existent_merchant.present?
+
     Merchant.new(
-      name: merchant_to_build['merchant name'],
+      name: merchant_name,
       address: merchant_to_build['merchant address']
     )
   end
