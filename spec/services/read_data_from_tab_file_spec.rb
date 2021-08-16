@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ExtractDataFromTabFile do
+RSpec.describe ReadDataFromTabFile do
   describe '#call' do
     it 'returns a hash from the parsing of a tab-separated file' do
       file = File.open('spec/fixtures/example_input.tab')
