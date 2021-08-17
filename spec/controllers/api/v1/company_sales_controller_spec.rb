@@ -42,17 +42,18 @@ RSpec.describe API::V1::CompanySalesController, type: :controller do
 
   describe 'POST #create' do
     context 'with valid parameters' do
-      it 'creates a new company_sale' do
-        company_sale = build(:company_sale)
+      let(:valid_params) do
+        { file_path: 'spec/fixtures/example_input.tab' }
+      end
 
+      it 'creates a new company_sale' do
         expect do
-          post :create, params: company_sale.attributes, as: :json
+          post :create, params: valid_params, as: :json
         end.to change(CompanySale, :count).by(1)
       end
 
       it 'returns a JSON response with the new company_sale' do
-        company_sale = build(:company_sale)
-        post :create, params: company_sale.attributes, as: :json
+        post :create, params: valid_params, as: :json
 
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including('application/json'))
@@ -61,16 +62,20 @@ RSpec.describe API::V1::CompanySalesController, type: :controller do
     end
 
     context 'with invalid parameters' do
+      let(:invalid_params) do
+        { file_path: 'spec/fixtures/file_without_sales.tab' }
+      end
+
       it 'does not create a new CompanySale' do
         expect do
-          post :create, params: {}, as: :json
+          post :create, params: invalid_params, as: :json
         end.to change(CompanySale, :count).by(0)
       end
 
       it 'returns a JSON response with errors for the new company_sale' do
-        post :create, params: {}, as: :json
+        post :create, params: invalid_params, as: :json
 
-        company_sale = CompanySale.new
+        company_sale = CompanySale.new(imported_at: Time.current)
         company_sale.valid?
 
         expect(response).to have_http_status(:unprocessable_entity)

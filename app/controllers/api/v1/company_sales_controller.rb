@@ -17,7 +17,7 @@ class API::V1::CompanySalesController < ApplicationController
       sales: SalesAndMerchantsBuilder.build(ReadDataFromTabFile.call(file))
     )
 
-    if company_sale.save
+    if !company_sale.sales.empty? && company_sale.save
       render json: company_sale, status: :created, serializer: CompanySalesSerializer
     else
       render json: company_sale.errors, status: :unprocessable_entity
