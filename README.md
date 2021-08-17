@@ -71,3 +71,9 @@ The Rails server will run by default on `localhost:3000`.
         bundle exec rspec
         
 2. For reporting access `coverage/indes.html` on your browser.
+
+## Improvements 📈
+
+1. Use ActiveStorage with some service like AWS for work with the company sales uploaded file.
+2. Cache on total all-time gross income endpoint.
+3. Some code refactoring to enable the disabled RuboCop cops and Reek rules.
