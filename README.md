@@ -9,6 +9,8 @@
 # SalesBox
 SalesBox is a easy to use cloud based sales analyzer that accepts text files (tab separated) uploads.
 
+https://sales-box-app.vercel.app/
+
 ## Features
 With SalesBox you can:
  * Check the Gross Income for each upload
