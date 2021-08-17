@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe API::V1::TotalAllTimeGrossIncome, type: :routing do
+RSpec.describe API::V1::TotalAllTimeGrossIncomeController, type: :routing do
   describe 'routing' do
     it 'routes to #index' do
       expect(get: '/api/v1/total_all_time_gross_income').to route_to('api/v1/total_all_time_gross_income#index')
