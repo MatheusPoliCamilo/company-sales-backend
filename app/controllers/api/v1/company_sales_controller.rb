@@ -11,7 +11,6 @@ class API::V1::CompanySalesController < ApplicationController
 
   # POST /api/v1/company_sales
   def create
-    file = File.open(company_sale_params[:file_path])
     company_sale = CompanySale.new(
       imported_at: Time.current,
       sales: SalesAndMerchantsBuilder.build(ReadDataFromTabFile.call(file))
@@ -31,7 +30,14 @@ class API::V1::CompanySalesController < ApplicationController
 
   private
 
+  def file
+    file = Tempfile.new
+    file.write(company_sale_params[:file])
+    file.rewind
+    file
+  end
+
   def company_sale_params
-    params.permit(:file_path)
+    params.permit(:file)
   end
 end

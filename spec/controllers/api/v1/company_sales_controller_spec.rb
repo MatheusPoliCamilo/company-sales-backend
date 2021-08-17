@@ -43,7 +43,7 @@ RSpec.describe API::V1::CompanySalesController, type: :controller do
   describe 'POST #create' do
     context 'with valid parameters' do
       let(:valid_params) do
-        { file_path: 'spec/fixtures/example_input.tab' }
+        { file: File.read('spec/fixtures/example_input.tab') }
       end
 
       it 'creates a new company_sale' do
