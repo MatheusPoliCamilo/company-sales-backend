@@ -56,11 +56,7 @@ MacOS:
         bin/rails db:create
         bin/rails db:migrate
 
-3. To seed the database with sample data, run the command bellow.
-
-        rake db:seed
-
-4. Run the Rails server.
+3. Run the Rails server.
 
         bin/rails server
 
