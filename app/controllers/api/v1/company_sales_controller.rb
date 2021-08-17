@@ -11,7 +11,11 @@ class API::V1::CompanySalesController < ApplicationController
 
   # POST /api/v1/company_sales
   def create
-    company_sale = CompanySale.new(company_sale_params)
+    file = File.open(company_sale_params[:file_path])
+    company_sale = CompanySale.new(
+      imported_at: Time.current,
+      sales: SalesAndMerchantsBuilder.build(ReadDataFromTabFile.call(file))
+    )
 
     if company_sale.save
       render json: company_sale, status: :created, serializer: CompanySalesSerializer
@@ -28,6 +32,6 @@ class API::V1::CompanySalesController < ApplicationController
   private
 
   def company_sale_params
-    params.permit(:imported_at)
+    params.permit(:file_path)
   end
 end
