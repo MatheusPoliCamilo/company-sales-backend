@@ -18,7 +18,7 @@ With SalesBox you can:
  * See a list of uploaded files to control your analysis.
 
 ## Get Started :fire:
-This repository is the Rails back-end API for the SalesBox project. 
+This repository is the Rails back-end for the SalesBox project. 
 Follow the setup below to install and run it locally.
 
 ## Prerequisites :floppy_disk:
