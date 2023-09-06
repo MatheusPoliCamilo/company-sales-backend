@@ -68,7 +68,7 @@ The Rails server will run by default on `localhost:3000`.
 
         bundle exec rspec
         
-2. For reporting access `coverage/indes.html` on your browser.
+2. For reporting access `coverage/index.html` on your browser.
 
 ## Improvements 📈
 
